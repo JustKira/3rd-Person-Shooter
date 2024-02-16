@@ -6,14 +6,14 @@ public class BulletController : MonoBehaviour
     private float speed = 30f;
     private float timeToDestroy = 5f;
     [SerializeField]
-    private float raycastLength = 1f; // Length of the raycast behind the bullet
+    private float raycastLength = 1f;
 
     public Vector3 target;
     public bool hit;
 
     private bool targetReached;
     private Vector3 direction;
-    private RaycastHit[] hits = new RaycastHit[10]; // Buffer for multiple hits
+    private RaycastHit[] hits = new RaycastHit[10];
     private LayerMask enemyLayer;
 
     private void Start()
@@ -46,7 +46,7 @@ public class BulletController : MonoBehaviour
         int numHits = Physics.RaycastNonAlloc(transform.position - direction * raycastLength, direction, hits, raycastLength + 0.1f, enemyLayer);
         for (int i = 0; i < numHits; i++)
         {
-            // Ensure we don't hit ourselves
+
             if (hits[i].collider.gameObject != gameObject)
             {
                 Enemy enemy = hits[i].collider.GetComponent<Enemy>();

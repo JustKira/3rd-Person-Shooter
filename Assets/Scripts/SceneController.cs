@@ -26,7 +26,6 @@ public class SceneController : MonoBehaviour
                 break;
         }
 
-        // Load the scene by name
         SceneManager.LoadScene(sceneName);
     }
 

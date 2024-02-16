@@ -80,7 +80,6 @@ public class Billboard : MonoBehaviour
 
     void LateUpdate()
     {
-        // Ensure the canvas always faces the camera
         transform.LookAt(transform.position + cam.transform.forward);
     }
 }

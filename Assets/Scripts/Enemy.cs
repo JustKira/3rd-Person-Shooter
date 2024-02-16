@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            OnDeath?.Invoke(); // Invoke the OnDeath event
+            OnDeath?.Invoke();
             Destroy(gameObject, 0.5f);
         }
     }
